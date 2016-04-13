@@ -1,0 +1,13 @@
+.vagrant
+.idea/*
+node_modules/*
+bower_components/*
+public.build/*
+public.src/bower/*
+.DS_Store
+/node_modules
+pids
+logs
+results
+npm-debug.log
+.sass-cache/*

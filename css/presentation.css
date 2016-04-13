@@ -1,0 +1,104 @@
+h4 {
+    text-align: center;
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+        width: 100%;
+    }
+}
+a:focus {
+    outline: 0 none !important;
+}
+.horizontal-item-wrap {
+    margin-bottom: 25px;
+    color: #000;
+    display: block;
+    height: 180px;
+}
+.float {
+    border-right: 3px dashed #eee;
+}
+.presentation hr {
+    border-top: 3px dashed #eee;
+    margin-top: 30px;
+}
+.presentation h1 {
+    position: fixed;
+    background: #fff;
+    z-index: 10;
+    width: 82%;
+    margin: 0;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 1px 5px #333;
+    left: 17%;
+    right: 0;
+    top: 0;
+}
+.inlineblock .col-sm-4,
+.inlineblock .col-sm-8,
+.inlineblock .col-sm-6{
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.inlineblock .col-sm-8 {
+    margin-left: -4px;
+}
+.content-wrap {
+    background: #eee;
+}
+.example-item {
+    border-radius: 15px;
+    width: 20%;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+}
+.green {
+    background: #78caa3;
+    height: 150px;
+}
+.blue {
+    background: #78c5ca;
+    height: 200px;
+}
+.yellow {
+    background: #d2d38a;
+    height: 70px;
+}
+.red {
+    background: #eda4a4;
+    height: 100px;
+}
+.row-of-items {
+    background: #eee;
+    padding: 10px;
+    display: block;
+    color: #fff;
+    line-height: 21px;
+}
+.inlineblock .example-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -4px;
+}
+.float .example-item {
+    float: left;
+}
+.popover {
+    width: 200px;
+}
+.no-margin-fix .example-item {
+    margin-right: 0;
+}
+.howto {
+    border-bottom: 1px dashed #1b6d85;
+    color: #1b6d85;
+    font-weight: 700;
+    margin-right: 10px;
+    display: inline-block;
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Guideline</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <style>
+        hr {
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+
+
+<div class="container">
+    <div class="row">
+        <div id="scrollspy" class="col-sm-3">
+            <ul class="nav nav-pills nav-stacked" role="tablist" style="position: fixed; margin-top: 80px">
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#navigation">Navigation</a></li>
+                <li><a href="#form">Forms</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#modal">Modals, tooltips</a></li>
+                <li><a href="#productItem">Product items</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9" style="margin-bottom: 100px">
+            <h1>A guideline page with all project elements.</h1>
+            <hr>
+
+            <section id="typography">
+                <h2>Typography section</h2>
+
+                <a class="btn btn-info" id="typographySwitch">Cyrillic/Latin text</a>
+
+                <div class="cyrillic" style="display: none">
+                    <h1>H1 tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра."
+                    </h1>
+
+                    <h2>H2 tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра,
+                        которыми я наслаждаюсь от всего сердца."</h2>
+
+                    <h3>H3 tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра,
+                        которыми я наслаждаюсь от всего сердца."</h3>
+                    <h4>H4 tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра,
+                        которыми я наслаждаюсь от всего сердца."</h4>
+                    <h5>H5 tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра,
+                        которыми я наслаждаюсь от всего сердца."</h5>
+                    <h6>H6 tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра,
+                        которыми я наслаждаюсь от всего сердца."</h6>
+
+                    <p>P tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра,
+                        которыми я наслаждаюсь от всего сердца."</p>
+                    <a>A tag - "Душа<sup>над</sup> моя озарена неземной радостью, как эти чудесные весенние утра,
+                        которыми я наслаждаюсь от всего сердца."</a>
+                </div>
+                <div class="latin">
+                    <h1>H1 tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor."</h1>
+
+                    <h2>H2 tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua."</h2>
+
+                    <h3>H3 tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua."</h3>
+                    <h4>H4 tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua."</h4>
+                    <h5>H5 tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua."</h5>
+                    <h6>H6 tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua."</h6>
+
+                    <p>P tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua."</p>
+                    <a>A tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua."</a>
+                </div>
+
+                <div style="margin-top: 20px">
+                    <ul class="butteted-list">
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Consectetur adipiscing elit</li>
+                        <li>Sed do eiusmod tempor incididunt</li>
+                        <li>Lorem ipsum dolor sit amet</li>
+                    </ul>
+                </div>
+
+                <p class="ellipsis">
+                    Example of text ellipsis - 5 lines shown.
+                    P tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                    P tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                    P tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                    P tag - "Lorem ipsum<sup>sup</sup> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+
+            </section>
+            <hr>
+
+
+            <section id="navigation">
+                <h2>Navigation links</h2>
+
+                <div class="topmenu-justified">
+                    <ul class="topmenu-justified__list">
+                        <li class="topmenu-justified__item"><a href="#">Justified menu link</a></li>
+                        <li class="topmenu-justified__item"><a href="#">Menu link</a></li>
+                        <li class="topmenu-justified__item"><a href="#">Menu link with a bit longer width</a></li>
+                        <li class="topmenu-justified__item"><a href="#">Lorem ipsum link</a></li>
+                        <li class="topmenu-justified__item"><a href="#">Last link in this menu</a></li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <hr>
+            <section id="form">
+                <h2>Form elements section (with error messges)</h2>
+
+                <form style="width: 50%;display: inline-block;vertical-align: top">
+                    <div class="form-group">
+                        <label for="select">Choose an option</label>
+
+                        <div class="select-wrap">
+                            <select id="select" class="form-control">
+                                <option>Lorem ipsum</option>
+                                <option>Consectetur adipiscing elit</option>
+                                <option>Lorem ipsum</option>
+                                <option>Lorem ipsum</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked> Checkbox - checked
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" disabled> Checkbox - disabled
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked disabled> Checkbox - disabled & checked
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio"> Radio button
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" checked> Radio button - checked
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" disabled> Radio button - disabled
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" checked disabled> Radio button - disabled & checked
+                        </label>
+                    </div>
+
+                    <textarea class="form-control" style="height: 100px"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+                <div class="filters" style="width: 48%;display: inline-block;vertical-align: top">
+                    <!--<h3>Other form-like elements, e.g. filters</h3>-->
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="buttons">
+                <h2>Buttons section</h2>
+
+                <a class="button" href="#">Link normal</a>
+                <br>
+                <br>
+                <button class="button">Button</button>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-default">Submit</button>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-default btn-success">Success Submit</button>
+            </section>
+
+            <hr>
+
+            <section id="modal">
+                <h2>Modals, dropdowns, popups, tooltips</h2>
+
+                <h4>Dropdown</h4>
+                <div class="dropdown">
+                    <a href="/" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Item</a>
+
+                    <ul class="dropdown-menu">
+                        <li class=""><a href="#" class="">1.1 Menu Item</a></li>
+                        <li class=""><a href="#" class="">1.2 Menu Item</a></li>
+                        <li class=""><a href="#" class="">1.3 Menu Item - a bit longer</a></li>
+                        <li class=""><a href="#" class="">1.4 Menu Item</a></li>
+                        <li class=""><a href="#" class="">1.5 Menu Item</a></li>
+                    </ul>
+                </div>
+
+                <h4>Modal</h4>
+                <h4>Tooltip</h4>
+            </section>
+
+            <hr>
+
+            <section id="productItem">
+                <h2>Product Item section</h2>
+                <h4>Item - horizontal</h4>
+                <div class="horizontal-item-wrap clearfix">
+                    <div class="horizontal-item">
+                        <div class="image-wrap col-sm-4">
+                            <img src="http://dummyimage.com/300x200/89c287/fff">
+                        </div>
+                        <div class="content-wrap col-sm-8">
+                            <h3>Item title</h3>
+                            <p>
+                                Item text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <button type="submit" class="btn btn-default btn-success">Success Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Item - vertical</h4>
+                <div class="vertical-item-wrap">
+                    <div class="vertical-item col-sm-4">
+                        <div class="image-wrap">
+                            <img src="http://dummyimage.com/300x200/89c287/fff">
+                        </div>
+                        <div class="content-wrap">
+                            <h3>Item title</h3>
+                            <p>
+                                Item text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <button type="submit" class="btn btn-default btn-success">Success Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="vertical-item col-sm-4">
+                        <div class="image-wrap">
+                            <img src="http://dummyimage.com/400x300/89c287/fff">
+                        </div>
+                        <div class="content-wrap">
+                            <h3>Item title #2</h3>
+                            <ul class="butteted-list">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Sed do eiusmod tempor incididunt</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="vertical-item-wrap" style="margin-top: 25px">
+                    <div class="vertical-item col-sm-4">
+                        <div class="image-wrap">
+                            <img src="http://dummyimage.com/300x200/89c287/fff">
+                        </div>
+                        <div class="content-wrap">
+                            <h3>Item title</h3>
+                            <p>
+                                Item text content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <button type="submit" class="btn btn-default btn-success">Success Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="vertical-item col-sm-4">
+                        <div class="image-wrap">
+                            <img src="http://dummyimage.com/400x300/89c287/fff">
+                        </div>
+                        <div class="content-wrap">
+                            <h3>Item title #2</h3>
+                            <ul class="butteted-list">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Sed do eiusmod tempor incididunt</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vertical-item col-sm-4">
+                        <div class="image-wrap">
+                            <img src="http://dummyimage.com/200x100/89c287/fff">
+                        </div>
+                        <div class="content-wrap">
+                            <h3>Item title #3</h3>
+                            <ul class="butteted-list">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Consectetur adipiscing elit</li>
+                                <li>Sed do eiusmod tempor incididunt</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<!-- bower:js -->
+<script src="js/vendor.min.js"></script>
+<!-- endinject -->
+
+<script>
+    $(function () {
+        $("#typographySwitch").click(function () {
+            $(".cyrillic").toggle();
+            $(".latin").toggle();
+        });
+    });
+</script>
+</body>
+</html>
