@@ -164,7 +164,53 @@
                         </div>
                     </div>
                 </div>
-                <h5><span class="howto">How to fix:</span>Add 'margin-right: -4px' to inline-block elements</h5>
+                <h5><span class="howto">How to fix:</span>Add { clear: left } to the element of the next row, wrap with a 'row' class, make elements of equal height, etc.</h5>
+                <div class="2-columns clearfix">
+                    <div class="col-sm-6 float">
+                        <div class="row-of-items clearfix">
+                            <div class="example-item green">1</div>
+                            <div class="example-item blue">2</div>
+                            <div class="example-item yellow">3</div>
+                            <div class="example-item red">4</div>
+                            <div class="example-item yellow">5</div>
+                            <div class="example-item yellow" style="clear: left">6 <span style="font-size: 15px">{clear: left}</span></div>
+                            <div class="example-item red">7</div>
+                            <div class="example-item green">8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="2-columns clearfix">
+                    <h4>Center blocks</h4>
+                    <div class="col-sm-6 float">
+                        <a tabindex="0" class="row-of-items clearfix center-block-example" role="button" data-toggle="popover"
+                           data-trigger="focus" data-placement="right" title="Remove floats"
+                           data-content="make display: inline-block;">
+                            <div class="float-center-helper">
+                                <div class="example-item red">1</div>
+                                <div class="example-item red">2</div>
+                                <div class="example-item red">3</div>
+                                <div class="example-item red">4</div>
+                                <div class="example-item red">5</div>
+                                <div class="example-item red">6</div>
+                                <div class="example-item red">7</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 inlineblock">
+                        <a tabindex="0" class="row-of-items clearfix center-block-example" role="button" data-toggle="popover"
+                           data-trigger="focus" data-placement="left" title="Inline-block parent"
+                           data-content="{ text-align: center; }">
+                            <div class="example-item red">1</div>
+                            <div class="example-item red">2</div>
+                            <div class="example-item red">3</div>
+                            <div class="example-item red">4</div>
+                            <div class="example-item red">5</div>
+                            <div class="example-item red">6</div>
+                            <div class="example-item red">7</div>
+                        </a>
+                    </div>
+                </div>
             </section>
             <hr>
             <section id="bugs">

@@ -1,5 +1,6 @@
 h4 {
     text-align: center;
+    margin-top: 40px;
 }
 @media (min-width: 1200px) {
     .container {
@@ -57,6 +58,7 @@ a:focus {
     text-align: center;
     color: #fff;
     padding: 15px;
+    margin-bottom: 5px;
 }
 .green {
     background: #78caa3;
@@ -92,7 +94,8 @@ a:focus {
 .popover {
     width: 200px;
 }
-.no-margin-fix .example-item {
+.no-margin-fix .example-item,
+.center-block-example .example-item{
     margin-right: 0;
 }
 .howto {
@@ -101,4 +104,10 @@ a:focus {
     font-weight: 700;
     margin-right: 10px;
     display: inline-block;
+}
+.center-block-example {
+    text-align: center;
+}
+.float .center-block-example .example-item {
+    width: 100px;
 }
