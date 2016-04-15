@@ -2,12 +2,6 @@ h4 {
     text-align: center;
     margin-top: 40px;
 }
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1400px;
-        width: 100%;
-    }
-}
 a:focus {
     outline: 0 none !important;
 }
@@ -24,20 +18,7 @@ a:focus {
     border-top: 3px dashed #eee;
     margin-top: 30px;
 }
-.presentation h1 {
-    position: fixed;
-    background: #fff;
-    z-index: 10;
-    width: 82%;
-    margin: 0;
-    padding: 20px 0 10px 0;
-    text-align: center;
-    font-size: 35px;
-    box-shadow: 0 1px 5px #333;
-    left: 17%;
-    right: 0;
-    top: 0;
-}
+
 .inlineblock .col-sm-4,
 .inlineblock .col-sm-8,
 .inlineblock .col-sm-6{
@@ -110,4 +91,21 @@ a:focus {
 }
 .float .center-block-example .example-item {
     width: 100px;
+}
+.inlineblock.top .example-item {
+    vertical-align: top;
+}
+.inlineblock.middle .example-item {
+    vertical-align: middle;
+}
+.inlineblock.bottom .example-item {
+    vertical-align: bottom;
+}
+.justify.inlineblock {
+    text-align: justify;
+}
+.justify .row-of-items:after {
+    content: " ";
+    width: 100%;
+    display: inline-block;
 }

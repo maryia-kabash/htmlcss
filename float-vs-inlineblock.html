@@ -30,9 +30,10 @@
             <h1>FLOAT vs INLINE-BLOCK</h1>
             <section id="similarities">
                 <h2>Where are these styles used? Similarities</h2>
-                <h3>Одно и то же отображение может быть достигнуто разными способами</h3>
+                <p>Значения float:left/right; и display: inline-block; в основном применяются применяются для отображения элементов side-by-side, например:</p>
 
                 <div class="2-columns clearfix">
+                    <p>расположение медиа и описания к нему:</p>
                     <div class="col-sm-6 float">
                         <a tabindex="0" class="horizontal-item-wrap clearfix" role="button" data-toggle="popover"
                            data-trigger="focus" title="Image, content"
@@ -50,14 +51,6 @@
                                     <button type="submit" class="btn btn-default btn-success">Success Submit</button>
                                 </div>
                             </div>
-                        </a>
-                        <a tabindex="0" class="row-of-items clearfix" role="button" data-toggle="popover"
-                           data-trigger="focus" title="Divs in a row"
-                           data-content="{ float: left; }">
-                            <div class="example-item green">1</div>
-                            <div class="example-item blue">2</div>
-                            <div class="example-item yellow">3</div>
-                            <div class="example-item red">4</div>
                         </a>
                     </div>
                     <div class="col-sm-6 inlineblock">
@@ -78,7 +71,21 @@
                                 </div>
                             </div>
                         </a>
-
+                    </div>
+                </div>
+                <div class="2-columns clearfix">
+                    <p>различные колонки контента - grid layout.</p>
+                    <div class="col-sm-6 float">
+                        <a tabindex="0" class="row-of-items clearfix" role="button" data-toggle="popover"
+                           data-trigger="focus" title="Divs in a row"
+                           data-content="{ float: left; }">
+                            <div class="example-item green">1</div>
+                            <div class="example-item blue">2</div>
+                            <div class="example-item yellow">3</div>
+                            <div class="example-item red">4</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 inlineblock">
                         <a tabindex="0" class="row-of-items" role="button" data-toggle="popover"
                            data-trigger="focus" data-placement="left" data-html="true" title="Divs in a row"
                            data-content="{<br> display: inline-block; <br>vertical-align: top;<br> margin-right: -4px;<br>}">
@@ -89,11 +96,17 @@
                         </a>
                     </div>
                 </div>
+
+                <br>
+                <p>На каждый пункт приведены два примера. Они показывают, что с помощью различных свойств CSS можно добиться одного и того же результата.</p>
             </section>
             <hr>
             <section id="peculiarities">
                 <h2>Peculiarities of each style</h2>
-
+                <p>
+                    Так как оба свойства могут быть использованы для решения одной и той же задачи, возникает вопрос:
+                    что же именно использовать и чем каждое использование может обернуться? Чтобы на него ответить, разберемся с примерами того, что "умеет" каждое свойство.
+                </p>
                 <div class="2-columns clearfix">
                     <h4>Width difference</h4>
                     <div class="col-sm-6 float">
@@ -137,6 +150,40 @@
                 </div>
                 <h5><span class="howto">How to fix:</span>Add 'margin-right: -4px' to inline-block elements</h5>
 
+                <p>Различие первое: между inline-block элементами есть примерно 4px пустого места. Поэтому два элемента с шириной 50% не помещаются в одну строку. </p>
+                <p> Причина этому - inline-block элементы ведут себя одновременно и как блочные,
+                    и как строчные. Что же это значит? Такой элемент - одновременно и "коробка", и "буква". "Коробке" можно
+                    дать ширину, высоту, отступы, границы. "Коробки" выстраиваются друг за другом в столбик. "Буквы" выстраиваются в "слова", т.е. слева направо, пока есть место
+                    для новой "буквы" в контейнере-родителе. И между буквами в любых словах есть промежутки для удобства чтения (доступ к ним можно получить через свойство
+                    letter-spacing: XX). Попробуйте выделить несколько inline-block элементов, и вы увидите, что промежутки между ними тоже выделяются.
+                </p>
+                <p>
+                    Тогда почему сверху написано "margin-right: -4px", а не "letter-spacing: -4px"? Существует несколько вариантов того, как
+                    <a href="https://css-tricks.com/fighting-the-space-between-inline-block-elements/">избавится от этих промежутков</a>. Кратко о том, почему я выбираю вариант с margin:
+                </p>
+                <ul>
+                    <li>
+                        <b>letter-spacing: -4px</b> - свойство наследуется, поэтому потомкам inline-block'а придется указывать
+                        нормальный межбуквенный интервал;
+                    </li>
+                    <li>
+                        <b>font-size: 0;</b> - то же самое;
+                    </li>
+                    <li>
+                        <b>Убрать пробелы</b> - снижает читабельность кода - раз, стоит кому-то из команды сделать beautify для кода, и все сломается - два;
+                    </li>
+                    <li>
+                        <b>Дописать комментарии</b> - когда верстка уйдет на бекэнд для создания темплейтов, будет сложно (скорей, непонятно) выводить список товаров / блоков / whatever;
+                    </li>
+                    <li>
+                        <b>Не закрывать тег li</b> - it feels weird. А если у меня будет не li, а div?
+                    </li>
+                    <li>
+                        <b>Использовать float или flexbox</b> - могут быть "противопоказания"
+                    </li>
+                </ul>
+                <p>Итого, вариант с margin кажется довольно универсальным, поэтому я использую именно его.</p>
+
                 <div class="2-columns clearfix">
                     <h4>Height difference</h4>
                     <div class="col-sm-6 float">
@@ -178,25 +225,19 @@
                             <div class="example-item green">8</div>
                         </div>
                     </div>
+                    <div class="col-sm-6 float" style="border: none">
+                        <div class="row-of-items">
+                            <div class="example-item green">1</div>
+                            <div class="example-item blue">2</div>
+                            <div class="example-item yellow">3</div>
+                            <div class="example-item red">4</div>
+                            <div class="example-item yellow">5</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="2-columns clearfix">
-                    <h4>Center blocks</h4>
-                    <div class="col-sm-6 float">
-                        <a tabindex="0" class="row-of-items clearfix center-block-example" role="button" data-toggle="popover"
-                           data-trigger="focus" data-placement="right" title="Remove floats"
-                           data-content="make display: inline-block;">
-                            <div class="float-center-helper">
-                                <div class="example-item red">1</div>
-                                <div class="example-item red">2</div>
-                                <div class="example-item red">3</div>
-                                <div class="example-item red">4</div>
-                                <div class="example-item red">5</div>
-                                <div class="example-item red">6</div>
-                                <div class="example-item red">7</div>
-                            </div>
-                        </a>
-                    </div>
+                    <h4>Center and Justify inline-block elements</h4>
                     <div class="col-sm-6 inlineblock">
                         <a tabindex="0" class="row-of-items clearfix center-block-example" role="button" data-toggle="popover"
                            data-trigger="focus" data-placement="left" title="Inline-block parent"
@@ -208,6 +249,54 @@
                             <div class="example-item red">5</div>
                             <div class="example-item red">6</div>
                             <div class="example-item red">7</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 inlineblock justify">
+                        <a tabindex="0" class="row-of-items clearfix no-margin-fix" role="button" data-toggle="popover"
+                           data-trigger="focus" data-placement="left" data-html="true" title="Inline-block parent"
+                           data-content="{ text-align: center; } <br> <b>parent:after</b> { <br>content: ''; <br>width: 100%; <br>display: inline-block;<br> }">
+                            <div class="example-item red">1</div>
+                            <div class="example-item red">2</div>
+                            <div class="example-item red">3</div>
+                            <div class="example-item red">4</div>
+                            <div class="example-item red">5</div>
+                            <div class="example-item red">6</div>
+                            <div class="example-item red">7</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="2-columns clearfix">
+                    <h4>Vertical align for inline-block elements</h4>
+
+                    <div class="col-sm-4 inlineblock top">
+                        <a tabindex="0" class="row-of-items clearfix center-block-example" role="button" data-toggle="popover"
+                           data-trigger="focus" data-placement="left" title="Inline-block elements"
+                           data-content="{ vertical-align: top; }">
+                            <div class="example-item green">1</div>
+                            <div class="example-item blue">2</div>
+                            <div class="example-item yellow">3</div>
+                            <div class="example-item red">4</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 inlineblock middle">
+                        <a tabindex="0" class="row-of-items clearfix center-block-example" role="button" data-toggle="popover"
+                           data-trigger="focus" data-placement="left" title="Inline-block elements"
+                           data-content="{ vertical-align: middle; }">
+                            <div class="example-item green">1</div>
+                            <div class="example-item blue">2</div>
+                            <div class="example-item yellow">3</div>
+                            <div class="example-item red">4</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 inlineblock bottom">
+                        <a tabindex="0" class="row-of-items clearfix center-block-example" role="button" data-toggle="popover"
+                           data-trigger="focus" data-placement="left" title="Inline-block elements"
+                           data-content="{ vertical-align: bottom; }">
+                            <div class="example-item green">1</div>
+                            <div class="example-item blue">2</div>
+                            <div class="example-item yellow">3</div>
+                            <div class="example-item red">4</div>
                         </a>
                     </div>
                 </div>
