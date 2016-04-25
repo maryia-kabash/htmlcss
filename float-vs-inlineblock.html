@@ -219,11 +219,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
-                        <h2>Особенности float'а</h2>
+                        <h2>Особенности float'а: расположение в виде сетки</h2>
 
                         <div class="2-columns clearfix">
-                            <h4>Height difference</h4>
-
                             <div class="col-sm-6 float">
                                 <div class="row-of-items clearfix">
                                     <div class="example-item green">1</div>
@@ -231,48 +229,99 @@
                                     <div class="example-item yellow">3</div>
                                     <div class="example-item red">4</div>
                                     <div class="example-item yellow">5</div>
-                                    <div class="example-item yellow">6</div>
-                                    <div class="example-item red">7</div>
+                                    <div class="example-item red">6</div>
+                                    <div class="example-item yellow">7</div>
                                     <div class="example-item green">8</div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 inlineblock">
+                            <div class="col-sm-6 float" style="border-right:none">
                                 <div class="row-of-items clearfix">
                                     <div class="example-item green">1</div>
                                     <div class="example-item blue">2</div>
                                     <div class="example-item yellow">3</div>
                                     <div class="example-item red">4</div>
                                     <div class="example-item yellow">5</div>
-                                    <div class="example-item yellow">6</div>
-                                    <div class="example-item red">7</div>
+                                    <div class="example-item red" style="clear: left">6 <span
+                                            style="font-size: 15px;line-height: 5px;">{clear: left}</span></div>
+                                    <div class="example-item yellow">7</div>
                                     <div class="example-item green">8</div>
                                 </div>
                             </div>
                         </div>
                         <h5><span class="howto">How to fix:</span>Add { clear: left } to the element of the next row,
                             wrap with a 'row' class, make elements of equal height, etc.</h5>
-
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="swiper-slide">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
                         <div class="2-columns clearfix">
+                            <h2>Особенности inline-block'а: промежутки между элементами - 1</h2>
+
+                            <div class="col-sm-6 float">
+                                <div class="horizontal-item-wrap clearfix" style="height: 165px">
+                                    <div class="horizontal-item no-margin-fix">
+                                        <div class="image-wrap yellow col-sm-6 example-item" style="width:50%">
+                                            50%
+                                        </div>
+                                        <div class="content-wrap red col-sm-6 example-item"
+                                             style="border:none;width:50%">
+                                            50%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6 inlineblock">
+                                <div class="horizontal-item-wrap clearfix" style="height: 165px">
+                                    <div class="horizontal-item no-margin-fix">
+                                        <div class="image-wrap yellow col-sm-6 example-item" style="width:50%">
+                                            50%
+                                        </div>
+                                        <div class="content-wrap red col-sm-6 example-item"
+                                             style="border:none;width:50%">
+                                            50%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <p>Между inline-block элементами есть примерно 4px пустого места. Поэтому два
+                                    элемента с шириной 50% не помещаются в одну строку, в отличие от точно таких же элементов со свойством float.
+                                </p>
+                                <p> Причина этому - inline-block элементы ведут себя одновременно и как блочные,
+                                    и как строчные. Что же это значит? Такой элемент - одновременно и "коробка", и "буква".
+                                    </p><p>
+                                    "Коробке" можно
+                                    дать ширину, высоту, отступы, границы. "Коробки" выстраиваются друг за другом в столбик.
+                            </p><p>
+                                    "Буквы" выстраиваются в "слова", т.е. слева направо, пока есть место
+                                    для новой "буквы" в контейнере-родителе. И между буквами в любых словах есть промежутки для
+                                    удобства чтения (доступ к ним можно получить через свойство
+                                    letter-spacing: XX). Попробуйте выделить несколько inline-block элементов, и вы увидите, что
+                                    промежутки между ними тоже выделяются.
+                                </p>
+                            </div>
+
                             <div class="col-sm-6 float">
                                 <div class="row-of-items clearfix">
                                     <div class="example-item green">1</div>
                                     <div class="example-item blue">2</div>
                                     <div class="example-item yellow">3</div>
                                     <div class="example-item red">4</div>
-                                    <div class="example-item yellow">5</div>
-                                    <div class="example-item yellow" style="clear: left">6 <span
-                                            style="font-size: 15px">{clear: left}</span></div>
-                                    <div class="example-item red">7</div>
-                                    <div class="example-item green">8</div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 float" style="border: none">
-                                <div class="row-of-items">
+                            <div class="col-sm-6 inlineblock">
+                                <div class="row-of-items no-margin-fix">
                                     <div class="example-item green">1</div>
                                     <div class="example-item blue">2</div>
                                     <div class="example-item yellow">3</div>
                                     <div class="example-item red">4</div>
-                                    <div class="example-item yellow">5</div>
                                 </div>
                             </div>
                         </div>
@@ -285,22 +334,10 @@
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
                         <div class="2-columns clearfix">
-                            <h4>Width difference</h4>
+                            <h2>Особенности inline-block'а: промежутки между элементами - 2</h2>
 
-                            <div class="col-sm-6 float">
-                                <div class="horizontal-item-wrap clearfix">
-                                    <div class="horizontal-item no-margin-fix">
-                                        <div class="image-wrap yellow col-sm-6 example-item" style="width:50%">
-                                            50%
-                                        </div>
-                                        <div class="content-wrap red col-sm-6 example-item"
-                                             style="border:none;width:50%">
-                                            50%
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row-of-items clearfix">
+                            <div class="col-sm-6 inlineblock">
+                                <div class="row-of-items no-margin-fix">
                                     <div class="example-item green">1</div>
                                     <div class="example-item blue">2</div>
                                     <div class="example-item yellow">3</div>
@@ -308,19 +345,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 inlineblock">
-                                <div class="horizontal-item-wrap clearfix">
-                                    <div class="horizontal-item no-margin-fix">
-                                        <div class="image-wrap yellow col-sm-6 example-item" style="width:50%">
-                                            50%
-                                        </div>
-                                        <div class="content-wrap red col-sm-6 example-item"
-                                             style="border:none;width:50%">
-                                            50%
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row-of-items no-margin-fix">
+                                <div class="row-of-items">
                                     <div class="example-item green">1</div>
                                     <div class="example-item blue">2</div>
                                     <div class="example-item yellow">3</div>
@@ -329,23 +354,8 @@
                             </div>
                         </div>
                         <h5><span class="howto">How to fix:</span>Add 'margin-right: -4px' to inline-block elements</h5>
-
-                        <p>Различие первое: между inline-block элементами есть примерно 4px пустого места. Поэтому два
-                            элемента с шириной 50% не помещаются в одну строку. </p>
-
-                        <p> Причина этому - inline-block элементы ведут себя одновременно и как блочные,
-                            и как строчные. Что же это значит? Такой элемент - одновременно и "коробка", и "буква".
-                            "Коробке" можно
-                            дать ширину, высоту, отступы, границы. "Коробки" выстраиваются друг за другом в столбик.
-                            "Буквы" выстраиваются в "слова", т.е. слева направо, пока есть место
-                            для новой "буквы" в контейнере-родителе. И между буквами в любых словах есть промежутки для
-                            удобства чтения (доступ к ним можно получить через свойство
-                            letter-spacing: XX). Попробуйте выделить несколько inline-block элементов, и вы увидите, что
-                            промежутки между ними тоже выделяются.
-                        </p>
-
                         <p>
-                            Тогда почему сверху написано "margin-right: -4px", а не "letter-spacing: -4px"? Существует
+                            Если промежутки между "буквами" редактируются с помощью "letter-spacing", почему сверху написано "margin-right: -4px", а не "letter-spacing: -4px"? Существует
                             несколько вариантов того, как
                             <a href="https://css-tricks.com/fighting-the-space-between-inline-block-elements/">избавится
                                 от этих промежутков</a>. Кратко о том, почему я выбираю вариант с margin:
@@ -384,7 +394,7 @@
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
                         <div class="2-columns clearfix">
-                            <h4>Center and Justify inline-block elements</h4>
+                            <h2>Особенности inline-block'а: центрирование и выравнивание по ширине</h2>
 
                             <div class="col-sm-6 inlineblock">
                                 <a tabindex="0" class="row-of-items clearfix center-block-example" role="button"
@@ -416,6 +426,10 @@
                                 </a>
                             </div>
                         </div>
+                        <p>
+                            Выравнивать по ширине и центрировать можно любой текст. Первая часть значения 'inline-block'
+                            приравнивает элементы к строчным, т.е. к тексту, поэтому и появляется возможность использовать выравнивание и центровку.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -426,7 +440,7 @@
                     <div class="col-sm-10 col-sm-offset-1">
 
                         <div class="2-columns clearfix">
-                            <h4>Vertical align for inline-block elements</h4>
+                            <h2>Особенности inline-block'а: вертикальное выравнивание</h2>
 
                             <div class="col-sm-4 inlineblock top">
                                 <a tabindex="0" class="row-of-items clearfix center-block-example" role="button"
@@ -462,6 +476,15 @@
                                 </a>
                             </div>
                         </div>
+
+                        <p>
+                            Самые основные значения свойства 'vertical-align' это -
+                        </p>
+                        <ul>
+                            <li>top</li>
+                            <li>middle</li>
+                            <li>bottom</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -479,7 +502,36 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
-                        <h2>Summing up</h2>
+                        <h2>Итого:</h2>
+
+                        <div class="2-columns clearfix">
+                            <div class="col-sm-6">
+                                <p>
+                                    Предпочительней использовать float, если:
+                                </p>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>
+                                    Предпочительней использовать inline-block, если:
+                                </p>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -503,7 +555,9 @@
 
         var swiper = new Swiper('.swiper-container', {
             'pagination': '.swiper-pagination',
-            'paginationClickable': true
+            'paginationClickable': true,
+            'nextButton': '.swiper-button-next',
+            'prevButton': '.swiper-button-prev'
         });
     });
 </script>

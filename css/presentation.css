@@ -10,7 +10,7 @@ h1 {
     font-weight: 400;
     padding: 10px;
 }
-p {
+p, a, li {
     font-size: 17px;
     line-height: 1.6;
 }
@@ -81,7 +81,7 @@ a:focus {
     display: block;
     color: #fff;
     line-height: 21px;
-    height: 220px;
+    /*height: 220px;*/
 }
 .inlineblock .example-item {
     display: inline-block;
@@ -174,4 +174,7 @@ a:focus {
     font-size: 45px;
     font-weight: 700;
     color: #e30613;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0;
 }
